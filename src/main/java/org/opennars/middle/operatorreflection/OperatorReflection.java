@@ -35,7 +35,7 @@ public class OperatorReflection {
 
         Method calledMethod = retMethodByName(object, methodName, argumentTypeArray);
 
-        MethodInvocationOperator operator = new MethodInvocationOperator(narsOperatorName, object, calledMethod, argumentTypes);
+        MethodInvocationOperator operator = new MethodInvocationOperator(narsOperatorName, object, calledMethod, argumentTypeArray);
 
         // register operator
         pluggable.addPlugin(operator);
