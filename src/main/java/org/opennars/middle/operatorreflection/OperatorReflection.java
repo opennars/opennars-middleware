@@ -30,7 +30,10 @@ public class OperatorReflection {
      * @param argumentTypes the types of the called method
      */
     public void appendAndRegisterMethodWithoutArguments(final Pluggable pluggable, final String narsOperatorName, final Object object, final String methodName, final List<Class> argumentTypes) throws NoSuchMethodException {
-        Method calledMethod = retMethodByName(object, methodName);
+        Class[] argumentTypeArray = new Class[argumentTypes.size()];
+        argumentTypeArray = argumentTypes.toArray(argumentTypeArray);
+
+        Method calledMethod = retMethodByName(object, methodName, argumentTypeArray);
 
         MethodInvocationOperator operator = new MethodInvocationOperator(narsOperatorName, object, calledMethod, argumentTypes);
 
@@ -40,7 +43,7 @@ public class OperatorReflection {
         methodOperators.put(narsOperatorName, operator);
     }
 
-    protected Method retMethodByName(final Object object, final String methodName) throws NoSuchMethodException {
-        return object.getClass().getMethod(methodName);
+    protected Method retMethodByName(final Object object, final String methodName, final Class[] argumentTypes) throws NoSuchMethodException {
+        return object.getClass().getMethod(methodName, argumentTypes);
     }
 }
