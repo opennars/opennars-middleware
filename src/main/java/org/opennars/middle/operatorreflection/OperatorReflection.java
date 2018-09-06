@@ -27,11 +27,12 @@ public class OperatorReflection {
      * @param narsOperatorName name of the operator as called by NARS
      * @param object object of method call
      * @param methodName name of the called method
+     * @param argumentTypes the types of the called method
      */
-    public void appendAndRegisterMethodWithoutArguments(Pluggable pluggable, String narsOperatorName, Object object, String methodName) throws NoSuchMethodException {
+    public void appendAndRegisterMethodWithoutArguments(final Pluggable pluggable, final String narsOperatorName, final Object object, final String methodName, final List<Class> argumentTypes) throws NoSuchMethodException {
         Method calledMethod = retMethodByName(object, methodName);
 
-        MethodInvocationOperator operator = new MethodInvocationOperator(narsOperatorName, object, calledMethod);
+        MethodInvocationOperator operator = new MethodInvocationOperator(narsOperatorName, object, calledMethod, argumentTypes);
 
         // register operator
         pluggable.addPlugin(operator);
@@ -39,7 +40,7 @@ public class OperatorReflection {
         methodOperators.put(narsOperatorName, operator);
     }
 
-    protected Method retMethodByName(Object object, String methodName) throws NoSuchMethodException {
+    protected Method retMethodByName(final Object object, final String methodName) throws NoSuchMethodException {
         return object.getClass().getMethod(methodName);
     }
 }
