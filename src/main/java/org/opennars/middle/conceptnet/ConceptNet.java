@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.opennars.middle.plugin.mental;
+package org.opennars.middle.conceptnet;
 
 import java.io.IOException;
 import java.io.InputStream;

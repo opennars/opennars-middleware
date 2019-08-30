@@ -58,6 +58,18 @@
             </roles>
             <timezone>+1</timezone>
         </developer>
+        <developer>
+            <id>patham9</id>
+            <name>Patrick Hammer</name>
+            <email>patham9@gmail.com</email>
+            <organization>OpenNARS</organization>
+            <organizationUrl>http://OpenNARS.org</organizationUrl>
+            <roles>
+                <role>Project Owner</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
     </developers>
 
 
@@ -66,6 +78,14 @@
             <groupId>org.opennars</groupId>
             <artifactId>opennars</artifactId>
             <version>3.0.0-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.0.1</version>
+            <type>jar</type>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
