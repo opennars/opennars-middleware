@@ -26,10 +26,7 @@ package org.opennars.middle.redisinput;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
-/**
- *
- * @author tc
- */
+
 public class Redis {
     //connection
     public static String redishost = "";

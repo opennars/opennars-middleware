@@ -26,10 +26,7 @@ package org.opennars.middle.redisinput;
 import org.opennars.main.Nar;
 import org.opennars.plugin.Plugin;
 
-/**
- *
- * @author tc
- */
+
 public class RedisInput implements Plugin {
     
     String queueName = "";

@@ -31,10 +31,6 @@ import org.opennars.operator.Operation;
 import org.opennars.operator.Operator;
 import org.opennars.storage.Memory;
 
-/**
- *
- * @author tc
- */
 public class RedisOutput extends Operator {
 
     public static String queueName = "";
